@@ -1,0 +1,37 @@
+div {
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	margin-left: 30px;
+	margin-bottom: 0;
+}
+
+.movie-container {
+	padding: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+
+}
+
+.movie-item {
+	display: flex;
+	flex-direction: column;
+}
+
+.movie-title {
+	width: 200px;
+	height: 60px;
+	overflow-wrap: break-word;
+	margin-bottom: 0;
+}
+
+
+.movie-details {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 10px;
+}
