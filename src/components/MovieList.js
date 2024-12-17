@@ -5,7 +5,7 @@ import React from "react";
 import MovieItem from "./MovieItem";
 import "./MovieList.css";
 
-const MovieList = () => {
+const MovieList = ({ onMovieSelect }) => {
   const { language } = useContext(LanguageContext);
   const [movies, setMovies] = useState([]);
 
@@ -18,7 +18,6 @@ const MovieList = () => {
 			try {
 				const response = await fetch(API_URL);
 				const data = await response.json();
-				console.log(data.results);
 				setMovies(data.results);
 			} catch (error) {
 				// 에러 표시 보여주는 코드 작성 예정
@@ -38,6 +37,7 @@ const MovieList = () => {
             key={movie.id}
             title={movie.title}
             img={`${IMG_URL}${movie.poster_path}`}
+						onClick={() => onMovieSelect(movie.id)}
           >
             <p className="movie-rdate">{movie.release_date}</p>
             <p className="movie-vote">{movie.vote_average} / 10</p>
