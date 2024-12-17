@@ -1,17 +1,19 @@
 import "./MovieDetails.css";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { API_KEY, BASE_URL } from "../config";
+import { LanguageContext } from "../context/LanguageContext";
 
 const MovieDetails = ({ movieId, onUnmount }) => {
   const [movieDetails, setMovieDetails] = useState({});
   const [error, setError] = useState();
+	const { language } = useContext(LanguageContext);
 
   useEffect(() => {
     let isMounted = true;
     const fetchMovieDetails = async () => {
       try {
         const response = await fetch(
-          `${BASE_URL}/invalid-endpoint?api_key=${API_KEY}`
+          `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=${language}`
         );
 
         const data = await response.json();
@@ -34,7 +36,7 @@ const MovieDetails = ({ movieId, onUnmount }) => {
       isMounted = false;
       console.log("MovieDetails 컴포넌트 언마운트됨");
     };
-  }, [movieId]);
+  }, [movieId, language]);
 
   return (
     <div>
