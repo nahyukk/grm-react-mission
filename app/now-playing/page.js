@@ -28,13 +28,15 @@ export default async function NowPlayingPage() {
       <main className={styles.main}>
         {data.results.map((movie) => (
           <div key={movie.id}>
-            <Image
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={movie.title}
-              width={200}
-              height={300}
-            />
-            <p>{movie.title}</p>
+            <Link href={`/movies/${movie.id}`}>
+              <Image
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt={movie.title}
+                width={200}
+                height={300}
+              />
+              <p>{movie.title}</p>
+            </Link>
           </div>
         ))}
       </main>

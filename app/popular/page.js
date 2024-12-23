@@ -28,13 +28,15 @@ export default async function PopularPage() {
       <main className={styles.main}>
         {data.results.map((movie) => (
           <div key={movie.id} className={styles.item}>
-            <Image
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={movie.title}
-              width={200}
-              height={300}
-            />
-            <h3 className={styles.title}>{movie.title}</h3>
+            <Link href={`/movies/${movie.id}`}>
+              <Image
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt={movie.title}
+                width={200}
+                height={300}
+              />
+              <h3 className={styles.title}>{movie.title}</h3>
+            </Link>
           </div>
         ))}
       </main>

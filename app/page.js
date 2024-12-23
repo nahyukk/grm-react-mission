@@ -22,7 +22,10 @@ export default async function Home() {
   }
 
   const popularMovies = (await popularResponse.json()).results.slice(0, 5);
-  const nowPlayingMovies = (await nowPlayingResponse.json()).results.slice(0, 5);
+  const nowPlayingMovies = (await nowPlayingResponse.json()).results.slice(
+    0,
+    5
+  );
 
   return (
     <div className={styles.page}>
@@ -39,13 +42,15 @@ export default async function Home() {
         <div className={styles.movieGrid}>
           {popularMovies.map((movie) => (
             <div key={movie.id} className={styles.movie}>
-              <Image
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
-                width={200}
-                height={300}
-              />
-              <h3>{movie.title}</h3>
+              <Link href={`/movies/${movie.id}`}>
+                <Image
+                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  alt={movie.title}
+                  width={200}
+                  height={300}
+                />
+                <h3>{movie.title}</h3>
+              </Link>
             </div>
           ))}
         </div>
