@@ -14,7 +14,7 @@ export default async function PopularPage() {
   );
 
   if (!response.ok) {
-    throw new Error("Failed to fetch popular movies");
+    throw new Error("api 못 불러왔다");
   }
 
   const data = await response.json();
