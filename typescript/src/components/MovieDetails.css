@@ -1,0 +1,48 @@
+.movie-detail-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.movie-detail-header button {
+	height: 38px;
+	width: 80px;
+	border: 1px solid gray;
+	border-radius: 50px;
+	background-color: white;
+	color: gray;
+	cursor: pointer;
+}
+
+.movie-detail-header button:active {
+	background-color: darkgray;
+	color: white;
+}
+
+.error-div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.error-message{
+	color: #B41845;
+	font-size: 50px;
+	font-weight: 700;
+}
+
+.error-div button {
+	height: 38px;
+	width: 80px;
+	border: 1px solid gray;
+	border-radius: 50px;
+	background-color: white;
+	color: gray;
+	cursor: pointer;
+}
+
+.error-div button:active {
+	background-color: darkgray;
+	color: white;
+}
