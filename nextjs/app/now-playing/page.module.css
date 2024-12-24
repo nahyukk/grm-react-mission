@@ -1,0 +1,38 @@
+.container {
+	margin: 30px 30px;
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	gap: 20px;
+	align-items: flex-end;
+	margin-bottom: 20px;
+}
+
+.header a {
+	font-size: 18px;
+}
+
+.header a:hover {
+	color: rgb(10, 237, 150);
+}
+
+.main {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.item {
+	display: flex;
+	flex-direction: column;
+}
+
+.title {
+	width: 200px;
+	height: 20px;
+	overflow-wrap: break-word;
+	margin: 10px 0;
+}

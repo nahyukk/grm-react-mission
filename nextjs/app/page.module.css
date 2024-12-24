@@ -1,0 +1,32 @@
+.page {
+	margin: 30px 20px;
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	gap: 20px;
+	align-items: flex-end;
+}
+
+.header p {
+	font-size: 18px;
+}
+
+.header p:hover {
+	color: rgb(10, 237, 150);
+}
+
+.title {
+	font-size: 48px;
+}
+
+.movieGrid {
+	display: flex;
+	flex-direction: row;
+	gap: 15px;
+}
+.movie {
+	margin: 20px 0;
+}

@@ -1,0 +1,26 @@
+.goback {
+	margin: 10px;
+	top: 10px;
+	position: relative;
+}
+
+.goback:hover {
+	color: rgb(10, 237, 150);
+}
+
+.container {
+	margin: 30px;
+}
+
+.title {
+	margin: 10px 0;
+	font-size: 24px;
+}
+
+.details {
+	margin: 10px 0;
+}
+
+.details p {
+	padding: 3px 0;
+}
