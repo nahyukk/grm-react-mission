@@ -1,0 +1,46 @@
+div {
+	padding: 0;
+	margin: 0;
+}
+
+.movie-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+
+}
+
+.movie-rdate {
+	color: gray;
+	font-size: 14px;
+}
+
+.movie-vote {
+	font-size: 14px;
+	color: #18B495;
+}
+.movie-item {
+	display: flex;
+	flex-direction: column;
+}
+
+.movie-poster {
+	width: 200px;
+	height: 300px;
+	object-fit: cover;
+	cursor: pointer;;
+}
+
+.movie-title {
+	width: 200px;
+	height: 60px;
+	overflow-wrap: break-word;
+	margin-bottom: 0;
+}
+
+.movie-details {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 10px;
+}
