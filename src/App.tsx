@@ -6,13 +6,13 @@ import { LanguageProvider } from "./context/LanguageContext";
 import MovieDetails from "./components/MovieDetails";
 
 function App() {
-  const [movieId, setMovieId] = useState();
+  const [movieId, setMovieId] = useState<number | null>(null); // 선택된 영화 ID
 
-  const handleMovieSelect = (id) => {
+  const handleMovieSelect = (id: number): void => {
     setMovieId(id);
   };
 
-	const handleUnmount = () => {
+	const handleUnmount = (): void => {
 		setMovieId(null);
 	}
 

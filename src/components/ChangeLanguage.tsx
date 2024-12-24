@@ -2,8 +2,15 @@ import React, { useContext } from "react";
 import { LanguageContext } from "../context/LanguageContext";
 import "./ChangeLanguage.css";
 
-const ChangeLanguage = () => {
-  const { language, toggleLanguage } = useContext(LanguageContext);
+const ChangeLanguage: React.FC = () => {
+  const context = useContext(LanguageContext);
+
+	if (!context) {
+    throw new Error("ChangeLanguage 에러");
+  }
+
+  const { language, toggleLanguage } = context;
+
 
   return (
     <div className="toggle-container">

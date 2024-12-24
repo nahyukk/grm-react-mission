@@ -1,6 +1,13 @@
 import React from "react";
 
-const MovieItem = ({ title, img, children, onClick }) => {
+type MovieItemProps = {
+  title: string;
+  img: string;
+  children?: React.ReactNode; 
+  onClick: () => void;
+};
+
+const MovieItem: React.FC<MovieItemProps> = ({ title, img, children, onClick }) => {
   return (
     <div className="movie-item">
       <img className="movie-poster" src={img} alt={title} onClick={onClick}/>

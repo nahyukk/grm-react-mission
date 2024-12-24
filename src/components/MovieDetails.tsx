@@ -3,10 +3,31 @@ import React, { useContext, useEffect, useState } from "react";
 import { API_KEY, BASE_URL } from "../config";
 import { LanguageContext } from "../context/LanguageContext";
 
-const MovieDetails = ({ movieId, onUnmount }) => {
-  const [movieDetails, setMovieDetails] = useState({});
-  const [error, setError] = useState();
-	const { language } = useContext(LanguageContext);
+type MovieDetailsProps = {
+  movieId: number;
+  onUnmount: () => void; 
+};
+
+type MovieDetail = {
+  title: string;
+  overview: string;
+  release_date: string;
+  vote_average: number
+};
+
+
+const MovieDetails: React.FC<MovieDetailsProps> = ({ movieId, onUnmount }) => {
+	const context = useContext(LanguageContext);
+
+  if (!context) {
+    throw new Error("LanguageContext 에러");
+  }
+
+  const { language } = context;
+
+  const [movieDetails, setMovieDetails] = useState<MovieDetail | null>(null);
+  const [error, setError] = useState<string | null>(null);
+	
 
   useEffect(() => {
     let isMounted = true;
@@ -45,7 +66,7 @@ const MovieDetails = ({ movieId, onUnmount }) => {
           <p className="error-message">{error}</p>
           <button onClick={onUnmount}>언마운트</button>
         </div>
-      ) : (
+      ) : movieDetails ? (
         <div>
           <div className="movie-detail-header">
             <h2>{movieDetails.title}</h2>
@@ -55,6 +76,8 @@ const MovieDetails = ({ movieId, onUnmount }) => {
           <p>개봉일: {movieDetails.release_date}</p>
           <p>평점: {movieDetails.vote_average} / 10</p>
         </div>
+			) : (
+				<p>Loading...</p>
       )}
     </div>
   );

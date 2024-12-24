@@ -1,8 +1,18 @@
 import { createContext, useState } from "react";
 
-export const LanguageContext = createContext();
+type LanguageContextType = {
+  language: string;
+  toggleLanguage: () => void;
+};
 
-export const LanguageProvider = ({children}) => {
+export const LanguageContext = createContext<LanguageContextType | undefined>
+  (undefined);
+
+	type LanguageProviderProps = {
+		children: React.ReactNode;
+	};
+
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({children}) => {
   const [language, setLanguage] = useState("en-US");
 
   const toggleLanguage = () => {
