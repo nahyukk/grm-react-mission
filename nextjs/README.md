@@ -202,11 +202,14 @@ export default async function NowPlayingPage() {
 
 ### <결과물>
 홈
-![image](https://github.com/user-attachments/assets/b5c204a0-1336-4f25-9568-8cf06c318555)
+![image](https://github.com/user-attachments/assets/b6530c18-671c-4bf7-a243-08b584136b57)
+
 popular
-![image](https://github.com/user-attachments/assets/5e275f35-1715-4b7e-84f6-93c14844fdaf)
+![image](https://github.com/user-attachments/assets/8f704575-66bf-43bb-9dba-a56e3ec8ed51)
+
 now-playing
-![image](https://github.com/user-attachments/assets/7fd90111-9cb8-4aa7-b42b-a34a312b1ce0)
+![image](https://github.com/user-attachments/assets/d98d19be-8fd2-4e2c-b5b0-85b1241d8465)
+
 
 ## 2. Next.js에서 동적 라우팅 구현하기
 
@@ -299,7 +302,8 @@ export default async function MovieDetailPage({ params }) {
 추가로 홈에도 똑같이 해줬다.
 
 ### <결과물>
-![image](https://github.com/user-attachments/assets/9828f2f1-f48d-4b1f-b16a-52bea287d97f)
+![image](https://github.com/user-attachments/assets/14a20b2f-8eb3-4610-b73d-aae844df90ab)
+
 
 ### <문제>
 
